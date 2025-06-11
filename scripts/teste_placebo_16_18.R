@@ -158,7 +158,7 @@ library(stargazer)
 #ai_ <- left_join(ai_, censo, by = c("ano", "cod_munic", "cod_esc"))
 
 #write.csv2(ai_,"D:/dissertacao_leticia/dados/dados_finais/base_ai_16_18_placebo.csv")
-ai_ <- read.csv2("dados/base_ai_16_18_placebo.csv")
+ai_ <- read.csv2("data/base_ai_16_18_placebo.csv")
 
 #Implement "improved" DR locally efficient DiD with repeated cross-section data
 ai_aprov_certify2 <- drdid(yname="tx_aprov_ai", tname = "time", idname = "cod_esc", dname = "tratamento",
@@ -271,7 +271,7 @@ summary(ai_aband_)
 #af_ <- left_join(af_, censo, by = c("ano", "cod_munic", "cod_esc"))
 
 #write.csv2(af_,"D:/dissertacao_leticia/dados/dados_finais/base_af_16_18_placebo.csv")
-af_ <- read.csv2("dados/base_af_16_18_placebo.csv")
+af_ <- read.csv2("data/base_af_16_18_placebo.csv")
 
 #Implement "improved" DR locally efficient DiD with repeated cross-section data
 af_aprov_certify2 <- drdid(yname="tx_aprov_af", tname = "time", idname = "cod_esc", dname = "tratamento",
@@ -368,7 +368,7 @@ summary(af_aband_certify2)
 #em_ <- left_join(em_, censo, by = c("ano", "cod_munic", "cod_esc"))
 
 #write.csv2(em_,"D:/dissertacao_leticia/dados/dados_finais/base_em_16_18_placebo.csv")
-em_ <- read.csv2("dados/base_em_16_18_placebo.csv")
+em_ <- read.csv2("data/base_em_16_18_placebo.csv")
 
 #Implement "improved" DR locally efficient DiD with repeated cross-section data
 em_aprov_certify2 <- drdid(yname="tx_aprov_em", tname = "time", idname = "cod_esc", dname = "tratamento",

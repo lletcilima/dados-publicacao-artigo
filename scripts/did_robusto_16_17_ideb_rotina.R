@@ -21,9 +21,9 @@ library(stargazer)
 
 
 ####dados####
-ai_ <- read.csv2("dados/base_ai_16_17_final_atualizado.csv")
-af_ <- read.csv2("dados/base_af_16_17_final_atualizado.csv")
-em_ <- read.csv2("dados/base_em_16_17_final_atualizado.csv")
+ai_ <- read.csv2("data/base_ai_16_17_final_atualizado.csv")
+af_ <- read.csv2("data/base_af_16_17_final_atualizado.csv")
+em_ <- read.csv2("data/base_em_16_17_final_atualizado.csv")
 
 #### estimacoes anos iniciais####
 
@@ -223,5 +223,5 @@ stargazer(ai_aprov_, ai_reprov_, ai_aband_,
           #af_aprov_, af_reprov_, af_aband_,
           #em_aprov_, em_reprov_, em_aband_,
           type = "latex", title = "Resultados - did tradicional ensino medio",
-                   out = "resultados/tabelas/did_tradicional_anos_iniciais.tex")
+                   out = "results/tables/did_tradicional_anos_iniciais.tex")
 

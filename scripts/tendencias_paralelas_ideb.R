@@ -23,32 +23,32 @@ library(texreg)
 library(stargazer)
 
 
-####dados####
+####data####
 #grupo tratado e controle
-#control_ai_ <- read.csv("dados/base_controle_tratado_ai_17.csv")
-#control_ai <- read.csv("dados/base_controle_tratado_ai_17.csv") %>%
+#control_ai_ <- read.csv("data/base_controle_tratado_ai_17.csv")
+#control_ai <- read.csv("data/base_controle_tratado_ai_17.csv") %>%
 #select(cod_munic, cod_esc, trat)
 
-#control_af_ <- read.csv("dados/base_controle_tratado_af_17.csv")
-#control_af <- read.csv("dados/base_controle_tratado_af_17.csv") %>%
+#control_af_ <- read.csv("data/base_controle_tratado_af_17.csv")
+#control_af <- read.csv("data/base_controle_tratado_af_17.csv") %>%
 #select(cod_munic, cod_esc, trat)
 
-#control_em_ <- read.csv("dados/base_controle_tratado_em_17.csv")
-#control_em <- read.csv("dados/base_controle_tratado_em_17.csv") %>%
+#control_em_ <- read.csv("data/base_controle_tratado_em_17.csv")
+#control_em <- read.csv("data/base_controle_tratado_em_17.csv") %>%
 #select(cod_munic, cod_esc, trat)
 
 ####modelo considerando apenas os anos pares (que não possui IDEB), ####
 #a fim de verificar se existe alguma diferença estatisticamente significante entre as escolas tratadas e controle
 #2012####
-#anos_iniciais_12 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#anos_iniciais_12 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_ai, tx_reprov_ai, tx_aband_ai, impar) %>%
   #filter(ano == 2012)
 
-#anos_finais_12 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#anos_finais_12 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_af, tx_reprov_af, tx_aband_af, impar) %>%
   #filter(ano == 2012)
 
-#ensino_medio_12 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#ensino_medio_12 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_em, tx_reprov_em, tx_aband_em, impar) %>%
   #filter(ano == 2012)
 ####Definindo tratados e controle###
@@ -62,15 +62,15 @@ library(stargazer)
 #em_12_$ano <- c(2012)
 
 #2014####
-#anos_iniciais_14 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#anos_iniciais_14 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_ai, tx_reprov_ai, tx_aband_ai, impar) %>%
   #filter(ano == 2014)
 
-#anos_finais_14 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#anos_finais_14 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_af, tx_reprov_af, tx_aband_af, impar) %>%
   #filter(ano == 2014)
 
-#ensino_medio_14 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#ensino_medio_14 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_em, tx_reprov_em, tx_aband_em, impar) %>%
   #filter(ano == 2014)
 ####Definindo tratados e controle###
@@ -85,15 +85,15 @@ library(stargazer)
 
 #2016####
 #base por etapa
-#anos_iniciais_16 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#anos_iniciais_16 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_ai, tx_reprov_ai, tx_aband_ai, impar) %>%
   #filter(ano == 2016)
 
-#anos_finais_16 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#anos_finais_16 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_af, tx_reprov_af, tx_aband_af, impar) %>%
   #filter(ano == 2016)
 
-#ensino_medio_16 <- read_dta("dados/tx_rend_painel_2.dta") %>%
+#ensino_medio_16 <- read_dta("data/tx_rend_painel_2.dta") %>%
  # filter(localizacao == "Urbana" & rede != "Privada") %>% select(ano:nm_escola,tx_aprov_em, tx_reprov_em, tx_aband_em, impar) %>%
   #filter(ano == 2016)
 ####Definindo tratados e controle###
@@ -125,14 +125,14 @@ library(stargazer)
 #em_17 <- control_em_ %>% select(cod_munic, cod_esc, ano:tx_aband_em, trat, time)
 #em <- rbind(em, em_17)
 
-#write.csv2(ai, "dados/base_ai_tend_paralelas.csv")
-#write.csv2(af, "dados/base_af_tend_paralelas.csv")
-#write.csv2(em, "dados/base_em_tend_parelelas.csv")
+#write.csv2(ai, "data/base_ai_tend_paralelas.csv")
+#write.csv2(af, "data/base_af_tend_paralelas.csv")
+#write.csv2(em, "data/base_em_tend_parelelas.csv")
 
-#### dados finalizados#####
-ai <- read.csv2("dados/base_ai_tend_paralelas.csv")
-af <- read.csv2("dados/base_af_tend_paralelas.csv")
-em <- read.csv2("dados/base_em_tend_paralelas.csv")
+#### data finalizados#####
+ai <- read.csv2("data/base_ai_tend_paralelas.csv")
+af <- read.csv2("data/base_af_tend_paralelas.csv")
+em <- read.csv2("data/base_em_tend_paralelas.csv")
 
 #anos iniciais####
 #### teste t das tx de rendimento por regiao para cada etapa de ensino ###
@@ -205,7 +205,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico1.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_1.png", width = 4, height = 3, dpi = 300)
 
 # Loop sobre os valores de anos que serão testados para reprov
 for (i in anos) {
@@ -271,7 +271,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico2.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_2.png", width = 4, height = 3, dpi = 300)
 
 
 # Loop sobre os valores de anos que serão testados para aband
@@ -338,7 +338,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico3.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_3.png", width = 4, height = 3, dpi = 300)
 
 
 write.csv2(resultados_t_aprov, "G:/Meu Drive/dissertacao_leticia/graficos_e_tabelas/result_did/teste_t_aprov_ai_anos_pares.csv")
@@ -417,7 +417,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico4.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_4.png", width = 4, height = 3, dpi = 300)
 
 
 # Loop sobre os valores de anos que serão testados para reprov
@@ -484,7 +484,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico5.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_5.png", width = 4, height = 3, dpi = 300)
 
 
 # Loop sobre os valores de anos que serão testados para aband
@@ -551,7 +551,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico6.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_6.png", width = 4, height = 3, dpi = 300)
 
 
 
@@ -631,7 +631,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico7.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_7.png", width = 4, height = 3, dpi = 300)
 
 
 
@@ -700,7 +700,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico8.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_8.png", width = 4, height = 3, dpi = 300)
 
 
 
@@ -769,7 +769,7 @@ ggplot(dados_longos, aes(x = ano, y = media, color = grupo, linetype = grupo, gr
   theme(legend.position = "bottom",
         panel.grid = element_blank())
 
-ggsave("G:/Meu Drive/dissertacao_leticia/artigo_ideb_submissao_traduzida/tendencias_paralelas/grafico9.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/grafico1_9.png", width = 4, height = 3, dpi = 300)
 
 
 

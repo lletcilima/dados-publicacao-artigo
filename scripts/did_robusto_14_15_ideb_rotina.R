@@ -92,7 +92,7 @@ library(stargazer)
 #ai_ <- left_join(ai_, censo, by = c("ano", "cod_munic", "cod_esc"))
 
 #write.csv2(ai_, "D:/dissertacao_leticia/dados/dados_finais/base_ai_14_15.csv")
-ai_ <- read.csv2("dados/base_ai_14_15.csv")
+ai_ <- read.csv2("data/base_ai_14_15.csv")
 
 #aprov - sem controles
 ai_aprov_certify1 <- drdid(yname="tx_aprov_ai", tname = "time", idname = "cod_esc", dname = "trat",
@@ -155,7 +155,7 @@ summary(ai_aband_certify2)
 #af_ <- left_join(af_, censo, by = c("ano", "cod_munic", "cod_esc"))
 
 #write.csv2(af_, "D:/dissertacao_leticia/dados/dados_finais/base_af_14_15.csv")
-af_ <- read.csv2("dados/base_af_14_15.csv")
+af_ <- read.csv2("data/base_af_14_15.csv")
 
 #aprov - sem controles
 af_aprov_certify1 <- drdid(yname="tx_aprov_af", tname = "time", idname = "cod_esc", dname = "trat",

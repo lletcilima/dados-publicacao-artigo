@@ -21,9 +21,9 @@ library(texreg)
 library(stargazer)
 
 ####dados####
-ai_ <- read.csv2("dados/base_ai_16_17_final_atualizado.csv")
-af_ <- read.csv2("dados/base_af_16_17_final_atualizado.csv")
-em_ <- read.csv2("dados/base_em_16_17_final_atualizado.csv")
+ai_ <- read.csv2("data/base_ai_16_17_final_atualizado.csv")
+af_ <- read.csv2("data/base_af_16_17_final_atualizado.csv")
+em_ <- read.csv2("data/base_em_16_17_final_atualizado.csv")
 
 #### estimacoes ####
 ####Norte####

@@ -27,7 +27,7 @@ gc(reset = TRUE)
 
 #regioes <- readxl::read_excel("G:/Meu Drive/dissertacao_leticia/graficos_e_tabelas/result_did/result_final_dissertacao/efeitos_heterogeneos.xlsx",
  #                            sheet = "regiao") %>% select(regiao:etapa, significancia)
-regioes <- read.csv("dados/efeitos_heterogeneos - regiao.csv") %>%
+regioes <- read.csv("data/efeitos_heterogeneos - regiao.csv") %>%
   select(regiao:etapa, significancia)
 
 regioes$regiao <- factor(regioes$regiao)
@@ -50,7 +50,7 @@ regioes_ai_aprov_duplicado <- regioes_ai_aprov %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_ai_aprov_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -64,7 +64,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultados/figuras/mapa1_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa1_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 #### ai_reprov_regiao####
 regioes_ai_reprov <- regioes %>% filter(tx_rendimento== "reprov", etapa == "ai")%>%
@@ -74,7 +74,7 @@ regioes_ai_reprov_duplicado <- regioes_ai_reprov %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_ai_reprov_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -88,7 +88,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultado/figuras/mapa2_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa2_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 #### ai_aband_regiao####
 regioes_ai_aband <- regioes %>% filter(tx_rendimento== "aband", etapa == "ai")%>%
@@ -98,7 +98,7 @@ regioes_ai_aband_duplicado <- regioes_ai_aband %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_ai_aband_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -112,7 +112,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultados/figuras/mapa3_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa3_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 #### af_aprov_regiao####
 regioes_af_aprov <- regioes %>% filter(tx_rendimento== "aprov", etapa == "af")%>%
@@ -122,7 +122,7 @@ regioes_af_aprov_duplicado <- regioes_af_aprov %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_af_aprov_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -136,7 +136,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultado/figuras/mapa4_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa4_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 #### af_reprov_regiao####
 regioes_af_reprov <- regioes %>% filter(tx_rendimento== "reprov", etapa == "af")%>%
@@ -146,7 +146,7 @@ regioes_af_reprov_duplicado <- regioes_af_reprov %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_af_reprov_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -160,7 +160,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultado/figuras/mapa5_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa5_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 #### af_aband_regiao####
 regioes_af_aband <- regioes %>% filter(tx_rendimento== "aband", etapa == "af")%>%
@@ -170,7 +170,7 @@ regioes_af_aband_duplicado <- regioes_ai_aband %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_af_aband_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -184,7 +184,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultado/figuras/mapa6_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa6_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 ### em_aprov_regiao####
 regioes_em_aprov <- regioes %>% filter(tx_rendimento== "aprov", etapa == "em")%>%
@@ -194,7 +194,7 @@ regioes_em_aprov_duplicado <- regioes_em_aprov %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_em_aprov_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -208,7 +208,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultado_figuras/mapa7_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa7_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 ### em_reprov_regiao####
 regioes_em_reprov <- regioes %>% filter(tx_rendimento== "reprov", etapa == "em")%>%
@@ -218,7 +218,7 @@ regioes_em_reprov_duplicado <- regioes_em_reprov %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_em_reprov_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -232,7 +232,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultado/figura/mapa8_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa8_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 ### em_aband_regiao####
 regioes_em_aband <- regioes %>% filter(tx_rendimento== "aband", etapa == "em")%>%
@@ -242,7 +242,7 @@ regioes_em_aband_duplicado <- regioes_em_aband %>%
   tidyr::unnest(UF)
 # mapa por etapa - regioes ###
 # Ler o arquivo shapefile com os limites geográficos dos municípios
-limites_regioes <- st_read("dados/BR_UF_2022.shp")
+limites_regioes <- st_read("data/BR_UF_2022.shp")
 # Juntar as informações de código do município e se o teste foi significativo ou não com os dados geográficos dos municípios
 limites_regioes <- merge(limites_regioes, regioes_em_aband_duplicado, by.x = "SIGLA_UF", by.y = "UF", all.x = TRUE)
 
@@ -256,7 +256,7 @@ ggplot(data = limites_regioes) +
   theme_bw() +
   theme(legend.position = "right")
 
-ggsave("resultado/figuras/mapa9_heterogeneidade.png", width = 4, height = 3, dpi = 300)
+ggsave("results/figures/mapa9_heterogeneidade.png", width = 4, height = 3, dpi = 300)
 
 
 
